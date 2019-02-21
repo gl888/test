@@ -1,10 +1,13 @@
+spring:
+  profiles:
+    active: dev
+---
 server:
   port: 8001
 spring:
   application:
     name: USER-PROVIDER #不要使用下划线,服务名字，只是一个标识而已
-  profiles:
-    active: dev
+  profiles: dev 
 eureka:
   client:
     service-url:
