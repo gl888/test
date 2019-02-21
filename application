@@ -1,3 +1,8 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
 server:
   port: 8001
 spring:
@@ -7,3 +12,16 @@ eureka:
   client:
     service-url:
      defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+profiles: dev
+
+---
+server:
+  port: 8002
+spring:
+  application:
+    name: USER-PROVIDER #不要使用下划线,服务名字，只是一个标识而已
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+profiles: test
